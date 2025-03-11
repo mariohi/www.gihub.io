@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SJW Quick Links</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png.png">
+    <link rel="apple-touch-icon" href="favicon.png.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --hover-color: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --link-color: #2563eb;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --grid-bg: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+                       linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+            --grid-size: 20px;
+        }
+
+        :root[data-theme="dark"] {
+            --primary-color: #60a5fa;
+            --hover-color: #3b82f6;
+            --bg-color: #1e293b;
+            --card-bg: #334155;
+            --text-color: #f1f5f9;
+            --link-color: #ffffff;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+            --grid-bg: linear-gradient(to right, #2a3544 1px, transparent 1px),
+                       linear-gradient(to bottom, #2a3544 1px, transparent 1px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: var(--grid-bg);
+            background-size: var(--grid-size) var(--grid-size);
+            color: var(--text-color);
+            line-height: 1.5;
+            padding: 2rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: calc(50% - 230px);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-color);
+            opacity: 0.4;
+            width: 16px;
+            height: 16px;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 0.75rem 1rem;
+            padding-left: 2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+            list-style: none;
+        }
+
+        .card {
+            position: relative;
+            background: var(--card-bg);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px -1px rgb(0 0 0 / 0.15), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .card:hover .icon {
+            transform: scale(1.1);
+            color: var(--hover-color);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-color);
+            margin: 0.5rem 0;
+            text-align: center;
+            transition: color 0.2s ease;
+        }
+
+        .card:hover h3 {
+            color: var(--primary-color);
+        }
+
+        .card a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            z-index: 1;
+        }
+
+        .context-menu {
+            display: none;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: var(--card-bg);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
+            z-index: 10;
+        }
+
+        .card:hover .context-menu {
+            display: block;
+        }
+
+        .context-menu button {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: none;
+            background: none;
+            color: var(--text-color);
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.875rem;
+        }
+
+        .context-menu button:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .last-visited {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .loading::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        .frequently-used {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+        }
+
+        .keyboard-shortcut {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--card-bg);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+        <div class="loading" id="loading"></div>
+        <header class="header">
+            <h1>SJW Quick Links</h1>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search links... (Press '/' to focus)" id="searchInput">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+            </div>
+        </header>
+
+        <div class="frequently-used" id="frequentlyUsed">
+            <h2>Frequently Used</h2>
+            <ul class="grid" id="frequentGrid"></ul>
+        </div>
+
+        <ul class="grid">
+            <li><a href="https://www.sparxmaths.uk/">
+                <div class="card">
+                    <div class="icon">
+                        <i class="fas fa-square-root-alt"></i>
+                    </div>
+                    <h3>Sparx Maths</h3>
+                    <div class="context-menu">
+                        <button onclick="copyLink(event, 'https://www.sparxmaths.uk/')">Copy Link</button>
+                    </div>
+                    <span class="last-visited"></span>
+                </div>
+            </a></li>
+            <li><a href="https://www.mangahigh.com/">
+                <div class="card">
+                    <div class="icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Manga High</h3>
+                    <div class="context-menu">
+                        <button onclick="copyLink(event, 'https://www.mangahigh.com/')">Copy Link</button>
+                    </div>
+                    <span class="last-visited"></span>
+                </div>
+            </a></li>
+            <li><a href="http://www.sjw.bham.sch.uk/">
+                <div class="card">
+                    <div class="icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>SJW Website</h3>
+                    <div class="context-menu">
+                        <button onclick="copyLink(event, 'http://www.sjw.bham.sch.uk/')">Copy Link</button>
+                    </div>
+                    <span class="last-visited"></span>
+                </div>
+            </a></li>
+            <li><a href="https://outlook.office365.com/owa/?realm=sjw.bham.sch.uk">
+                <div class="card">
+                    <div class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Office 365</h3>
+                    <div class="context-menu">
+                        <button onclick="copyLink(event, 'https://outlook.office365.com/owa/?realm=sjw.bham.sch.uk')">Copy Link</button>
+                    </div>
+                    <span class="last-visited"></span>
+                </div>
+            </a></li>
+            <li><a href="https://en.wikipedia.org/">
+                <div class="card">
+                    <div class="icon">
+                        <i class="fab fa-wikipedia-w"></i>
+                    </div>
+                    <h3>Wikipedia</h3>
+                    <div class="context-menu">
+                        <button onclick="copyLink(event, 'https://en.wikipedia.org/')">Copy Link</button>
+                    </div>
+                    <span class="last-visited"></span>
+                </div>
+            </a></li>
+        </ul>
+
+        <div class="keyboard-shortcut" id="keyboardHint">
+            Press '/' to search
+        </div>
+
+        <script>
+            // Theme handling
+            function getTheme() {
+                return localStorage.getItem('theme') || 'light';
+            }
+
+            function setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                document.getElementById('themeToggle').textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
+
+            // Initialize theme
+            setTheme(getTheme());
+
+            // Theme toggle click handler
+            document.getElementById('themeToggle').addEventListener('click', () => {
+                const currentTheme = getTheme();
+                setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+
+            // Search functionality with loading state
+            const searchInput = document.getElementById('searchInput');
+            const loading = document.getElementById('loading');
+            const cards = document.querySelectorAll('.card');
+
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                loading.classList.add('active');
+
+                setTimeout(() => {
+                    cards.forEach(card => {
+                        const title = card.querySelector('h3').textContent.toLowerCase();
+                        const shouldShow = title.includes(query);
+                        card.closest('li').style.display = shouldShow ? 'block' : 'none';
+                    });
+                    loading.classList.remove('active');
+                }, 300);
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                if (e.key === '/' && document.activeElement !== searchInput) {
+                    e.preventDefault();
+                    searchInput.focus();
+                }
+            });
+
+            // Frequently used links
+            function updateFrequentlyUsed() {
+                const frequentLinks = JSON.parse(localStorage.getItem('frequentLinks') || '{}');
+                const frequentGrid = document.getElementById('frequentGrid');
+                const frequentlyUsed = document.getElementById('frequentlyUsed');
+
+                // Sort links by visit count
+                const sortedLinks = Object.entries(frequentLinks)
+                    .sort(([,a], [,b]) => b.count - a.count)
+                    .slice(0, 4);
+
+                if (sortedLinks.length === 0) {
+                    frequentlyUsed.style.display = 'none';
+                    return;
+                }
+
+                frequentlyUsed.style.display = 'block';
+                frequentGrid.innerHTML = '';
+
+                sortedLinks.forEach(([url, data]) => {
+                    const original = document.querySelector(`a[href="${url}"]`);
+                    if (original) {
+                        const clone = original.closest('li').cloneNode(true);
+                        frequentGrid.appendChild(clone);
+                    }
+                });
+            }
+
+            // Track link clicks
+            document.querySelectorAll('.card a').forEach(link => {
+                link.addEventListener('click', () => {
+                    const url = link.href;
+                    const frequentLinks = JSON.parse(localStorage.getItem('frequentLinks') || '{}');
+                    
+                    frequentLinks[url] = {
+                        count: (frequentLinks[url]?.count || 0) + 1,
+                        lastVisited: new Date().toISOString()
+                    };
+
+                    localStorage.setItem('frequentLinks', JSON.stringify(frequentLinks));
+                    updateFrequentlyUsed();
+                    
+                    // Navigate to the link
+                    window.location.href = url;
+                });
+            });
+
+            // Copy link functionality
+            function copyLink(event, url) {
+                event.preventDefault();
+                event.stopPropagation();
+                navigator.clipboard.writeText(url);
+                
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 1000);
+            }
+
+            // Initialize frequently used section
+            updateFrequentlyUsed();
+
+            // Add last visited timestamps
+            function updateLastVisited() {
+                const frequentLinks = JSON.parse(localStorage.getItem('frequentLinks') || '{}');
+                document.querySelectorAll('.card').forEach(card => {
+                    const link = card.closest('a');
+                    if (link && frequentLinks[link.href]?.lastVisited) {
+                        const lastVisited = new Date(frequentLinks[link.href].lastVisited);
+                        const timeAgo = getTimeAgo(lastVisited);
+                        
+                        let lastVisitedEl = card.querySelector('.last-visited');
+                        if (!lastVisitedEl) {
+                            lastVisitedEl = document.createElement('div');
+                            lastVisitedEl.className = 'last-visited';
+                            card.appendChild(lastVisitedEl);
+                        }
+                        lastVisitedEl.textContent = `Last visited: ${timeAgo}`;
+                    }
+                });
+            }
+
+            function getTimeAgo(date) {
+                const seconds = Math.floor((new Date() - date) / 1000);
+                const intervals = {
+                    year: 31536000,
+                    month: 2592000,
+                    week: 604800,
+                    day: 86400,
+                    hour: 3600,
+                    minute: 60
+                };
+
+                for (const [unit, secondsInUnit] of Object.entries(intervals)) {
+                    const interval = Math.floor(seconds / secondsInUnit);
+                    if (interval >= 1) {
+                        return `${interval} ${unit}${interval === 1 ? '' : 's'} ago`;
+                    }
+                }
+                return 'just now';
+            }
+
+            // Update last visited times periodically
+            updateLastVisited();
+            setInterval(updateLastVisited, 60000);
+
+            // Make entire card clickable
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Don't trigger if clicking the context menu
+                    if (!e.target.closest('.context-menu')) {
+                        const link = card.querySelector('a');
+                        if (link) {
+                            // Track the click for frequently used section
+                            const url = link.href;
+                            const frequentLinks = JSON.parse(localStorage.getItem('frequentLinks') || '{}');
+                            
+                            frequentLinks[url] = {
+                                count: (frequentLinks[url]?.count || 0) + 1,
+                                lastVisited: new Date().toISOString()
+                            };
+
+                            localStorage.setItem('frequentLinks', JSON.stringify(frequentLinks));
+                            updateFrequentlyUsed();
+                            
+                            // Navigate to the link
+                            window.location.href = url;
+                        }
+                    }
+                });
+            });
+
+            // Add hover sound effect
+            const hoverSound = new Audio('data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA/+M4wAAAAAAAAAAAAEluZm8AAAAPAAAAAwAAABQAFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/+MYxAAAAANIAAAAAExBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV/+MYxDsAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV');
+        
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    hoverSound.currentTime = 0;
+                    hoverSound.play().catch(() => {}); // Ignore autoplay errors
+                });
+            });
+        </script>
+    </body>
+</html>
